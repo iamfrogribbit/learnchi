@@ -6,7 +6,7 @@ function App() {
 
     async function getData() {
         try {
-            const response = await axios.get('http://localhost:3000');
+            const response = await axios.get(import.meta.env.VITE_API_URL);
             console.log(response)
         } catch (error) {
             console.log('error occurred:' + error);

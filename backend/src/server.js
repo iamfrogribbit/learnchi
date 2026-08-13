@@ -7,7 +7,11 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 const corsOptions = {
-    origin: ["http://localhost:5173"]
+    origin: [
+        "http://localhost:5173",
+        "https://learnchi.vercel.app/"
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
 }
 
 app.use(cors(corsOptions));
