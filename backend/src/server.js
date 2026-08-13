@@ -9,7 +9,7 @@ const app = express();
 const corsOptions = {
     origin: [
         "http://localhost:5173",
-        "https://learnchi.vercel.app/"
+        "https://learnchi.vercel.app"
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE']
 }
@@ -20,7 +20,9 @@ app.use(express.json());
 app.use('/api/auth', AuthRouter);
 
 app.get('/', (req, res) => {
-    res.send("Response and such things such as that")
+    res.send({
+        body: "Response and such things such as that"
+    })
 })
 
 app.listen(PORT, () => {
