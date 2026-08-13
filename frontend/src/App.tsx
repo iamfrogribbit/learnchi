@@ -3,13 +3,10 @@ import { Outlet } from 'react-router';
 
 function App() {
 
-    const url = import.meta.env.VITE_API_URL;
-    console.log(url)
-
     async function getData() {
         try {
-            const response = await fetch(url);
-            console.log(response)
+            const response = await fetch(import.meta.env.VITE_API_URL).then((response) => response.json())
+            console.log(response);
         } catch (error) {
             console.log('error occurred:' + error);
         }
